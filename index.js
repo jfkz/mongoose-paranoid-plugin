@@ -1,7 +1,7 @@
 var Model = require('mongoose').Model;
 
 module.exports = function MongooseParanoidPlugin(schema, options = {}) {
-    if (schema.options.paranoid !== true) {
+    if (options.paranoid !== true) {
         return; // skip overriding native methods if paranoid is not enabled explicitly
     }
     var field = options.field || 'deletedAt';
